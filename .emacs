@@ -12,6 +12,7 @@
  '(default-tab-width 4)
  '(delete-selection-mode 1)
  '(indent-tabs-mode nil)
+ '(mode-require-final-newline nil)
  )
 (if window-system
 (custom-set-faces
@@ -85,3 +86,20 @@
 ;(if (and (fboundp 'server-running-p) 
 ;         (not (server-running-p)))
 ;   (server-start))
+
+
+; magit key binding
+
+(global-set-key (kbd "C-x g") 'magit-status)
+
+; whitespace cleaner, only if currently clean.
+(require 'ethan-wspace)
+(global-ethan-wspace-mode 1)
+
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
+; required packages:
+; magit
+; ethan-wspace
+; virtualenvwrapper
